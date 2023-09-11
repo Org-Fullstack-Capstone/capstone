@@ -8,6 +8,9 @@ import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import Home from './Components/Home';
 import Login from './Components/Login';
 import Checkout from './Components/Checkout';
+import Header from './Components/Header';
+import "./Components/Header.css"
+
 
 
 function App() {
@@ -17,14 +20,13 @@ function App() {
     <>
    <div id="container">
          <div id="navbar">
-        
-         <Link to='/checkout'>Checkout</Link>
-         <Link to='/Login'>Login</Link>
-         <Link to='/'>Home</Link>
+         
+         
+         
          </div>
          <div id="main-section">
          <Routes>
-           <Route path="/" element={<Home/>}/>
+           <Route path="/" element={<Home/> }/>
            <Route path="/Login" element={<Login/>}/>
            <Route path="/Checkout" element={<Checkout />}/>
          </Routes>

@@ -1,9 +1,12 @@
+import Header from "./Header"
+
 function Home() {
 
 
   return (
-    <>
-      <h1>Home Page</h1>
+    <> 
+     <Header/>
+      <h1>Home Page</h1> 
     </>
     )
   }
