@@ -3,6 +3,8 @@ import React from 'react'
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import "./Header.css"
 import SearchIcon from "@mui/icons-material/Search"
+import ShoppingBasketIcon from '@mui/icons-material/ShoppingBasket';
+
 function Header() {
   return (
     <>
@@ -16,14 +18,40 @@ function Header() {
         <input type="text" className="header_searchInput"/>
         <SearchIcon className="header_searchIcon" />
      </div>
-     {/*3 Links*/} 
+     {/*3 Links*/}   
+      <div className="header_nav">
+     {/* Link 1 Sigin and greeting*/} 
+      
        <Link to="/login" className="header_link">
          <div className="header_option">
-           <span>Hello,</span>
-           <span>Sign In</span>
+           <span className="header_option1">Hello,Abdul</span>
+           <span className="header_option2">Sign In</span>
          </div>
        </Link>
+      {/* Returns and orders*/}
+       <Link to="/" className="header_link">
+         <div className="header_option">
+           <span className="header_option1" >Returns</span>
+           <span className="header_option2">& Orders</span>
+         </div>
+       </Link>
+       {/* Your prime*/}
+       <Link to="/" className="header_link">
+         <div className="header_option">
+           <span className="header_option1">Your,</span>
+           <span className="header_option2">Prime</span>
+         </div>
+       </Link>
+       </div>
      {/*Basket icon with number*/}
+     <Link to="/checkout" className="header_link">
+      <div className ="header_optionBasket">
+        {/* Shoping basket icon*/}
+        <ShoppingBasketIcon />
+        {/* Number of items in the basket*/}
+        <span className="header_option2 header_basketCount">0</span>
+      </div>
+     </Link>
      </nav> 
     </>
   )
