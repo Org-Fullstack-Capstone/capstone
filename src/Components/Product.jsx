@@ -23,5 +23,5 @@ function Product({id, title, image , price, rating}) {
     </div>
   )
 }
-git@github.com:Org-Fullstack-Capstone/capstone.git
+
 export default Product
