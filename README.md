@@ -1,4 +1,4 @@
-# Shopping 🛒
+#Capstone project🛒
 This is a mini e-commerce project.
 
 ## To start application
