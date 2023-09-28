@@ -1,0 +1,19 @@
+.searchProduct{
+  display: flex;
+}
+.search__input {
+  width: 300px;
+  padding: 10px 20px;
+  border-color: var(--color-primary);
+  border-radius: 0.5rem;
+  display: flex;
+  flex:1;
+}
+.search__input:focus {
+  outline: var(--color-primary);
+}
+.searchProduct{
+  background: #cd9042;
+  background-color: #cd9042;
+}
+

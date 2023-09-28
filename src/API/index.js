@@ -1,12 +1,12 @@
 const cohortName = "2302-ACC-PT-WEB-PT-A";
-const API_URL = `https://strangers-things.herokuapp.com/api/${cohortName}`;
-const POSTS_API_URL = `${API_URL}/posts`;
-const LOGIN_API_URL = `${API_URL}/users/login`;
+const API_URL = `https://fakestoreapi.com`;
+const PRODUCTS_API_URL = `${API_URL}/products`;
+const LOGIN_API_URL = `${API_URL}/auth/login`;
 const LOGGEDIN_API_URL = `${API_URL}/users/me`;
-const REGISTER_API_URL = `${API_URL}/users/register`;
+const REGISTER_API_URL = `${API_URL}/users`;
 
 // Fetch all posts: unauthenticated
-export async function fetchPosts(token) {
+export async function fetchProducts(token) {
   try {
     if (token) {
       const response = await fetch(POSTS_API_URL, {
@@ -17,17 +17,17 @@ export async function fetchPosts(token) {
         },
       });
       const data = await response.json();
-      return data.data.posts;
+      return data.data.products;
     } else {
-      const response = await fetch(POSTS_API_URL);
+      const response = await fetch(PRODUCTS_API_URL);
       const data = await response.json();
-      return data.data.posts;
+      return data.data.products;
     }
   } catch (error) {
-    console.log("Trouble fetching posts: ", error);
+    console.log("Trouble fetching products: ", error);
   }
 }
-fetchPosts();
+fetchProcuts();
 
 // Fetch login, authenticating a user if their username and password mathes the right data
 export async function fetchLogin(username, password) {
@@ -93,17 +93,17 @@ export async function fetchNewUser(username, password) {
   }
 }
 
-// Posting a new post
-export async function fetchNewPost(
+// Add a new Product
+export async function fetchNewProduct(
   userToken,
   title,
   description,
   price,
-  location,
-  willDeliver
+  category,
+  imageUrl
 ) {
   try {
-    const response = await fetch(POSTS_API_URL, {
+    const response = await fetch(PRODUCTS_API_URL, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -112,10 +112,10 @@ export async function fetchNewPost(
       body: JSON.stringify({
         post: {
           title: `${title}`,
-          description: `${description}`,
           price: `${price}`,
-          location: `${location}`,
-          willDeliver: `${willDeliver}`,
+          category: `${category}`,
+          description: `${description}`,
+          image: `${imageUrl}`,
         },
       }),
     });
@@ -127,9 +127,9 @@ export async function fetchNewPost(
   }
 }
 
-export async function deletePost(postId, userToken) {
+export async function deleteProducts(id, userToken) {
   try {
-    const response = await fetch(`${POSTS_API_URL}/${postId}`, {
+    const response = await fetch(`${PRODUCTS_API_URL}/${productId}`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
@@ -143,17 +143,17 @@ export async function deletePost(postId, userToken) {
   }
 }
 
-export async function editPost(
-  postId,
+export async function editProduct(
+  productId,
   userToken,
   title,
   description,
   price,
-  location,
-  willDeliver
+  category,
+  imageUrl
 ) {
   try {
-    const response = await fetch(`${POSTS_API_URL}/${postId}`, {
+    const response = await fetch(`${POSTS_API_URL}/${productId}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
@@ -164,8 +164,8 @@ export async function editPost(
           title: `${title}`,
           description: `${description}`,
           price: `${price}`,
-          location: `${location}`,
-          willDeliver: `${willDeliver}`,
+          category: `${category}`,
+          image: `${imageUrl}`,
         },
       }),
     });
@@ -177,9 +177,9 @@ export async function editPost(
   }
 }
 
-export async function postMessage(postId, userToken, message) {
+export async function productMessage(Id, userToken, message) {
   try {
-    const response = await fetch(`${POSTS_API_URL}/${postId}/messages`, {
+    const response = await fetch(`${POSTS_API_URL}/${productId}/messages`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

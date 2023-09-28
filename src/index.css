@@ -1,8 +1,3 @@
-body{
-  background-color: rgb(234,237,237);
-  margin: 0;
-}
-
-code {
-  font-family: soruce-code-pro,Menlo,Maonaco,monospace;
+* {
+  box-sizing: border-box;
 }
