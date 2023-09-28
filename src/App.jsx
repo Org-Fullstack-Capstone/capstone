@@ -4,7 +4,7 @@ import Header from "./components/header/Header";
 
 import Search from "./components/search/Search";
 import AddProducts from "./components/addproducts/AddProducts";
-import CardBody from "./components/cards/CardBody";
+import CardBody from "./Components/cards/CardBody";
 import Button from "./components/button/Button";
 import Navbar from "./components/Navbar/Navbar";
 import SortProduct from "./components/sort/SortProduct";

@@ -45,7 +45,7 @@ const Card = ({ product, addItem, removeItem, addedItems }) => {
              fetch('https://fakestoreapi.com/products/'+product.id)
               .then(res=>res.json())
               .then(json=>console.log(json))
-              .then(console.log(res.data))
+            
           }}
         >
           {"Details"}
