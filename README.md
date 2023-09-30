@@ -1,18 +1,6 @@
-#Capstone project🛒
-This is a mini e-commerce project.
-
-## To start application
-
-Open terminal
-
-### `dev` Start the client side
-
-```
-npm install
-```
-
-```
-npm run dev
-```
-
----
+#Capstone eCommerce project 🛒
+t
+Technologies :
+  HTML, CSS , JAVASCRIPT 
+  React @latest 
+  Material UI
